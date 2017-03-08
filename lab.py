@@ -54,3 +54,52 @@ for element in array:
 # Get Index
 for (index, element) in enumerate(array):
     print(index, element)
+
+
+
+# 2-dimentions array with 4 rows, 3 columns
+twod_array = [[1, 2, 3], [4, 5, 6], [7, 8, 9], [10, 11, 12]]
+for index, row in enumerate(twod_array):
+    print("row ", index, ":", row)
+
+# print row 1 until row 3
+print("row 1 until row 3: ", twod_array[1:3])
+
+# all rows from row 2
+print("all rows from row 2: ", twod_array[2:])
+
+# all rows until row 2
+print("all rows until row 2:", twod_array[:2])
+
+# all rows from the beginning with step of 2.
+print("all rows from the beginning with step of 2:", twod_array[::2])
+
+
+# Dictionaries
+d = {'key1': 'value1', 'key2': 'value2'}  # Create a new dictionary with some data
+print(d['key1'])       # Get an entry from a dictionary; prints "value1"
+print('key1' in d)     # Check if a dictionary has a given key; prints "True"
+d['key3'] = 'value3'    # Set an entry in a dictionary
+print(d['key3'])      # Prints "value3"
+# print(d['key9'])  # KeyError: 'key9' not a key of d
+print(d.get('key9', 'custom_default_value'))  # Get an element with a default; prints "custom_default_value"
+print(d.get('key3', 'custom_default_value'))    # Get an element with a default; prints "value3"
+del d['key3']        # Remove an element from a dictionary
+print(d.get('key3', 'custom_default_value')) # "fish" is no longer a key; prints "custom_default_value"
+
+# Funcitons
+def square(x):
+    return x*x
+
+print(square(5))
+
+# Lambda functions
+array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+# apply function "square" on each element of "array"
+print(list(map(lambda x: square(x), array)))
+
+# or using a for loop, and a list comprehension
+print([square(x) for x in array])
+
+print("orignal array:", array)
