@@ -143,3 +143,18 @@ from math import sin
 
 # use the function
 print(sin(60))
+
+# Ex 1: check square number
+####!@SOLUTION@!####
+
+import math
+
+def checkSquareNumber(x):
+    # get square root of x
+    square_root = math.sqrt(x)
+    # check if the square root is integer number or not
+    # and return the result
+    return square_root == int(square_root)
+
+print(checkSquareNumber(16))
+print(checkSquareNumber(250))
