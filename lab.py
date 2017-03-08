@@ -103,3 +103,43 @@ print(list(map(lambda x: square(x), array)))
 print([square(x) for x in array])
 
 print("orignal array:", array)
+
+# Closures ?
+# select only the prime number in array
+# and square them
+def filterAndSquarePrime(arr):
+
+    # a very simple function to check a number is prime or not
+    def checkPrime(number):
+        for i in range(2, int(number/2)):
+            if number % i == 0:
+                return False
+        return True
+
+    primeNumbers = filter(lambda x: checkPrime(x), arr)
+    return map(lambda x: square(x), primeNumbers)
+
+# we can not access checkPrime from here
+# checkPrime(5)
+
+result = filterAndSquarePrime(array)
+list(result)
+
+# Importing Modules
+# import module 'math' to uses functions for calculating
+import math
+
+# print the square root of 16
+print(math.sqrt(16))
+
+# we can create alias when import a module
+import numpy as np
+
+print(np.sqrt(16))
+
+# Import Certain functions from Modules
+# only import function 'sin' in package 'math'
+from math import sin
+
+# use the function
+print(sin(60))
